@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Telugu Bridal Artistry - Your Name</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:wght@400;600;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --gap: 16px;
+      --thumb-height: 220px;
+      --sidebar-width: 280px;
+      --rose-gold: #b76e79;
+      --deep-rose: #8b4357;
+      --champagne: #f7e7ce;
+      --burgundy: #6b1b3d;
+      --blush: #ffc9d9;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #1a0a0f;
+      color: #fff;
+      display: flex;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Ambient animated background */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 50%, rgba(183,110,121,.12) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(139,67,87,.12) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(247,231,206,.08) 0%, transparent 40%);
+      animation: bgShift 16s ease-in-out infinite;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    @keyframes bgShift {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .85; transform: scale(1.06); }
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: var(--sidebar-width);
+      background: linear-gradient(180deg, #2d0a1a 0%, #4a1b2e 40%, #6b1b3d 100%);
+      padding: 40px 24px;
+      box-shadow: 4px 0 40px rgba(183, 110, 121, 0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: fixed;
+      top: 0; bottom: 0; left: 0;
+      overflow-y: auto;
+      z-index: 100;
+      border-right: 2px solid rgba(183, 110, 121, 0.3);
+    }
+
+    .sidebar::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(247,231,206,.05) 1px, transparent 1px);
+      background-size: 30px 30px;
+      animation: sparkleMove 20s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes sparkleMove { 0% { background-position: 0 0; } 100% { background-position: 30px 30px; } }
+
+    .profile-pic {
+      width: 160px; height: 160px; border-radius: 50%; overflow: hidden; cursor: pointer;
+      box-shadow: 0 0 0 5px rgba(183,110,121,.4), 0 0 0 10px rgba(247,231,206,.2), 0 12px 50px rgba(183,110,121,.6);
+      transition: transform .5s cubic-bezier(.4,0,.2,1), box-shadow .5s cubic-bezier(.4,0,.2,1);
+      position: relative; z-index: 2;
+    }
+
+    .profile-pic::before { content: ''; position: absolute; inset: -5px; border-radius: 50%; background: linear-gradient(45deg, var(--rose-gold), var(--champagne), var(--deep-rose)); z-index: -1; opacity: 0; transition: opacity .5s ease; }
+    .profile-pic:hover::before { opacity: 1; animation: rotate 3s linear infinite; }
+    @keyframes rotate { 100% { transform: rotate(360deg); } }
+    .profile-pic:hover { transform: scale(1.1) translateY(-8px); box-shadow: 0 0 0 5px rgba(183,110,121,.6), 0 0 0 10px rgba(247,231,206,.3), 0 20px 70px rgba(183,110,121,.8); }
+    .profile-pic img { width: 100%; height: 100%; object-fit: cover; }
+
+    .artist-name {
+      font-size: 28px; font-weight: 700; margin-top: 24px; text-align: center; color: var(--champagne);
+      font-family: 'Playfair Display', serif; text-shadow: 3px 3px 10px rgba(0,0,0,.6); letter-spacing: 2px; position: relative; z-index: 2;
+    }
+    .artist-name::after { content: '💄✨'; display: block; font-size: 18px; margin-top: 10px; animation: twinkle 2.5s ease-in-out infinite; }
+    @keyframes twinkle { 0%,100% { opacity: .5; transform: scale(1) rotate(0); } 50% { opacity: 1; transform: scale(1.12) rotate(5deg); } }
+
+    .bio { font-size: 14px; color: rgba(247,231,206,.85); text-align: center; margin-top: 16px; line-height: 1.7; font-weight: 300; position: relative; z-index: 2; }
+
+    .social-icons { margin-top: 32px; display: flex; gap: 20px; position: relative; z-index: 2; }
+    .social-icons a { width: 54px; height: 54px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 22px; transition: all .4s cubic-bezier(.4,0,.2,1); background: rgba(247,231,206,.08); backdrop-filter: blur(20px); border: 2px solid rgba(183,110,121,.3); position: relative; overflow: hidden; color: var(--champagne); }
+    .social-icons a::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle, rgba(247,231,206,.35) 0%, transparent 70%); opacity: 0; transition: opacity .4s ease; }
+    .social-icons a:hover::before { opacity: 1; }
+    .social-icons a:hover { transform: translateY(-10px) scale(1.18) rotate(8deg); box-shadow: 0 15px 35px rgba(0,0,0,.5); }
+
+    .contact { margin-top: 32px; font-size: 14px; color: rgba(247,231,206,.9); text-align: center; line-height: 2.1; font-weight: 300; position: relative; z-index: 2; }
+    .contact a { color: var(--blush); text-decoration: none; transition: color .3s ease; font-weight: 400; }
+    .contact a:hover { color: var(--champagne); }
+
+    /* Main */
+    .main { margin-left: var(--sidebar-width); width: calc(100% - var(--sidebar-width)); display: flex; flex-direction: column; position: relative; z-index: 1; min-height: 100vh; }
+
+    /* Banner */
+    .banner { position: relative; width: 100%; height: 36vh; min-height: 320px; overflow: hidden; }
+    .banner::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(107,27,61,.45) 0%, rgba(183,110,121,.35) 100%); z-index: 1; mix-blend-mode: overlay; }
+    .banner video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(.6) saturate(1.15); }
+
+    .banner .content { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(45,10,26,.7) 0%, rgba(74,27,46,.58) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: white; padding: 48px 32px; z-index: 2; gap: 16px; }
+    .banner h1 { font-size: 56px; margin: 0; letter-spacing: 4px; font-family: 'Playfair Display', serif; text-shadow: 4px 4px 15px rgba(0,0,0,.8); animation: fadeInUp 1s ease-out; background: linear-gradient(135deg, var(--champagne) 0%, var(--blush) 50%, var(--rose-gold) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: 700; }
+
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+
+    .banner p { font-size: 20px; margin: 4px 0 10px; font-weight: 300; animation: fadeInUp 1s ease-out .25s both; letter-spacing: 2px; color: var(--champagne); text-shadow: 2px 2px 8px rgba(0,0,0,.6); }
+
+    .banner-buttons { display: flex; gap: 16px; margin-top: 10px; animation: fadeInUp 1s ease-out .5s both; flex-wrap: wrap; justify-content: center; }
+
+    .btn-primary, .btn-secondary { display: inline-flex; align-items: center; gap: 10px; padding: 14px 32px; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: 16px; letter-spacing: 1.2px; position: relative; overflow: hidden; transition: transform .35s cubic-bezier(.4,0,.2,1), box-shadow .35s cubic-bezier(.4,0,.2,1), border-color .35s ease, background .35s ease; }
+
+    .btn-primary { background: linear-gradient(135deg, var(--rose-gold) 0%, var(--burgundy) 100%); color: #fff; border: 2px solid rgba(247,231,206,.28); box-shadow: 0 10px 36px rgba(183,110,121,.45); }
+    .btn-secondary { background: rgba(183,110,121,.14); color: var(--champagne); border: 2px solid var(--rose-gold); box-shadow: 0 10px 28px rgba(0,0,0,.25); }
+
+    .btn-primary::before, .btn-secondary::before { content: ''; position: absolute; top: 50%; left: 50%; width: 0; height: 0; border-radius: 50%; background: rgba(255,255,255,.28); transform: translate(-50%,-50%); transition: width .55s ease, height .55s ease; }
+    .btn-primary:hover::before, .btn-secondary:hover::before { width: 340px; height: 340px; }
+    .btn-primary:hover { transform: translateY(-4px) scale(1.04); box-shadow: 0 20px 56px rgba(183,110,121,.6); border-color: var(--champagne); }
+    .btn-secondary:hover { transform: translateY(-4px) scale(1.04); background: rgba(183,110,121,.22); border-color: var(--blush); }
+
+    /* Sections */
+    .section { padding: 90px 44px; position: relative; overflow: hidden; }
+    .section:nth-child(odd) { background: rgba(26,10,15,.6); }
+
+    /* Bridal section background image with elegant overlay */
+    .section.bridal-section {
+      position: relative;
+      background:
+        linear-gradient(135deg, rgba(26, 10, 15, 0.60) 0%, rgba(74, 27, 46, 0.45) 100%),
+        url('https://i.imgur.com/6X9z4l0.jpeg') center center / cover no-repeat fixed;
+      min-height: 100vh;
+      width: 100%;
+      isolation: isolate;
+    }
+
+    /* Section title */
+    .section h2 { color: var(--champagne); font-size: 48px; margin-bottom: 18px; font-family: 'Playfair Display', serif; position: relative; display: inline-block; font-weight: 700; letter-spacing: 2.5px; animation: slideInLeft .8s ease-out; text-shadow: 3px 3px 12px rgba(0,0,0,.5); }
+    @keyframes slideInLeft { from { opacity: 0; transform: translateX(-36px); } to { opacity: 1; transform: translateX(0); } }
+    .section h2::before { content: ''; position: absolute; bottom: -14px; left: 0; width: 100px; height: 5px; background: linear-gradient(to right, var(--rose-gold), var(--blush)); border-radius: 3px; box-shadow: 0 0 25px rgba(183,110,121,.6); }
+    .section-subtitle { color: rgba(247,231,206,.74); font-size: 18px; font-weight: 300; margin-top: 28px; margin-bottom: 44px; letter-spacing: 1.3px; animation: fadeIn 1s ease-out .25s both; line-height: 1.65; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    /* Gallery */
+    .gallery { display: flex; gap: var(--gap); overflow: hidden; background: linear-gradient(135deg, rgba(247,231,206,.05) 0%, rgba(183,110,121,.08) 100%); padding: 28px; border-radius: 24px; box-shadow: 0 10px 40px rgba(0,0,0,.4), inset 0 2px 0 rgba(247,231,206,.15); border: 2px solid rgba(183,110,121,.2); backdrop-filter: blur(22px); }
+    .auto-scroll { display: flex; animation: scrollGallery 45s linear infinite; }
+    .gallery:hover .auto-scroll { animation-play-state: paused; }
+    @keyframes scrollGallery { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    .thumb { flex: 0 0 auto; height: var(--thumb-height); border-radius: 16px; overflow: hidden; cursor: pointer; position: relative; margin-right: var(--gap); box-shadow: 0 10px 30px rgba(0,0,0,.5), 0 0 0 2px rgba(183,110,121,.3); transition: transform .45s cubic-bezier(.4,0,.2,1), box-shadow .45s cubic-bezier(.4,0,.2,1); }
+    .thumb::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(183,110,121,.38) 0%, rgba(107,27,61,.38) 100%); opacity: 0; transition: opacity .45s ease; z-index: 1; }
+    .thumb::after { content: '💕'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%) scale(0); font-size: 36px; z-index: 2; transition: transform .35s cubic-bezier(.4,0,.2,1); text-shadow: 2px 2px 10px rgba(0,0,0,.8); }
+    .thumb:hover { transform: translateY(-10px) scale(1.04); box-shadow: 0 20px 56px rgba(183,110,121,.55), 0 0 0 3px var(--rose-gold); }
+    .thumb:hover::before { opacity: 1; }
+    .thumb:hover::after { transform: translate(-50%,-50%) scale(1); }
+    .thumb img { height: 100%; width: auto; transition: transform .6s cubic-bezier(.4,0,.2,1); filter: brightness(.88) saturate(1.12); }
+    .thumb:hover img { transform: scale(1.18); filter: brightness(1) saturate(1.25); }
+
+    /* Testimonials */
+    .testimonials { padding: 90px 44px; background: linear-gradient(135deg, rgba(45,10,26,.82) 0%, rgba(74,27,46,.68) 100%), rgba(26,10,15,.92); margin: 44px; border-radius: 32px; box-shadow: 0 20px 70px rgba(0,0,0,.5), inset 0 2px 0 rgba(247,231,206,.15); text-align: center; border: 2px solid rgba(183,110,121,.3); position: relative; overflow: hidden; }
+    .testimonials::before { content: '"'; position: absolute; top: 30px; left: 50px; font-size: 200px; font-family: 'Playfair Display', serif; color: rgba(183,110,121,.12); line-height: 1; }
+    .testimonials h2 { margin-bottom: 56px; }
+    .testimonial-grid { display: flex; gap: 30px; overflow-x: auto; padding: 20px 12px; scroll-behavior: smooth; }
+    .testimonial-grid::-webkit-scrollbar { height: 8px; }
+    .testimonial-grid::-webkit-scrollbar-thumb { background: var(--rose-gold); border-radius: 5px; }
+    .testimonial-card { flex: 0 0 auto; width: 380px; background: linear-gradient(135deg, rgba(247,231,206,.08) 0%, rgba(183,110,121,.06) 100%); padding: 40px; border-radius: 22px; box-shadow: 0 10px 40px rgba(0,0,0,.4), inset 0 2px 0 rgba(247,231,206,.12); transition: transform .45s cubic-bezier(.4,0,.2,1), box-shadow .45s cubic-bezier(.4,0,.2,1); border: 2px solid rgba(183,110,121,.2); backdrop-filter: blur(22px); position: relative; }
+    .testimonial-card::before { content: '⭐⭐⭐⭐⭐'; display: block; margin-bottom: 22px; font-size: 18px; opacity: .9; }
+    .testimonial-card:hover { transform: translateY(-12px) scale(1.02); box-shadow: 0 24px 66px rgba(183,110,121,.5), inset 0 2px 0 rgba(247,231,206,.2); border-color: var(--rose-gold); }
+    .testimonial-text { font-style: italic; margin-bottom: 24px; color: rgba(247,231,206,.86); line-height: 1.8; font-size: 16px; font-weight: 300; }
+    .testimonial-author { font-weight: 600; color: var(--blush); font-size: 16px; letter-spacing: 1.3px; }
+
+    /* Connect */
+    .connect-me { padding: 90px 44px; background: linear-gradient(135deg, rgba(107,27,61,.3) 0%, rgba(183,110,121,.25) 100%), rgba(26,10,15,.92); margin: 44px; border-radius: 32px; box-shadow: 0 20px 70px rgba(0,0,0,.5), inset 0 2px 0 rgba(247,231,206,.15); text-align: center; border: 2px solid rgba(183,110,121,.3); }
+    .connect-me h2 { margin-bottom: 56px; }
+    .connect-form { max-width: 650px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+    .connect-form input, .connect-form textarea { padding: 18px 24px; border: 2px solid rgba(183,110,121,.3); border-radius: 16px; font-size: 16px; background: rgba(247,231,206,.06); color: var(--champagne); font-family: 'Poppins', sans-serif; transition: all .3s ease; backdrop-filter: blur(14px); }
+    .connect-form input:focus, .connect-form textarea:focus { outline: none; border-color: var(--rose-gold); background: rgba(247,231,206,.1); box-shadow: 0 0 28px rgba(183,110,121,.38); transform: translateY(-2px); }
+    .connect-form textarea { resize: vertical; min-height: 150px; }
+    .connect-form button { padding: 16px 44px; background: linear-gradient(135deg, var(--rose-gold) 0%, var(--burgundy) 100%); color: white; border: none; border-radius: 999px; cursor: pointer; font-size: 17px; font-weight: 600; letter-spacing: 1.3px; transition: transform .35s cubic-bezier(.4,0,.2,1), box-shadow .35s cubic-bezier(.4,0,.2,1), border-color .35s ease; box-shadow: 0 10px 36px rgba(183,110,121,.45); position: relative; overflow: hidden; border: 2px solid rgba(247,231,206,.28); }
+    .connect-form button::before { content: ''; position: absolute; top: 50%; left: 50%; width: 0; height: 0; border-radius: 50%; background: rgba(255,255,255,.28); transform: translate(-50%,-50%); transition: width .55s ease, height .55s ease; }
+    .connect-form button:hover::before { width: 420px; height: 420px; }
+    .connect-form button:hover { transform: translateY(-4px) scale(1.03); box-shadow: 0 20px 56px rgba(183,110,121,.6); border-color: var(--champagne); }
+
+    /* Footer */
+    .footer { background: linear-gradient(180deg, rgba(45,10,26,.95) 0%, #1a0a0f 100%); padding: 64px 44px 32px; text-align: center; border-top: 2px solid rgba(183,110,121,.3); position: relative; margin-top: auto; }
+    .footer-logo { font-size: 34px; font-family: 'Playfair Display', serif; color: var(--rose-gold); margin-bottom: 22px; font-weight: 700; text-shadow: 2px 2px 10px rgba(0,0,0,.5); }
+    .footer-text { color: rgba(247,231,206,.72); font-size: 15px; margin-bottom: 28px; font-weight: 300; letter-spacing: 1px; }
+    .footer-social { display: flex; justify-content: center; gap: 22px; margin-bottom: 28px; }
+    .footer-social a { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: rgba(247,231,206,.08); border: 2px solid rgba(183,110,121,.3); color: var(--champagne); font-size: 20px; transition: transform .35s ease, background .35s ease, border-color .35s ease; }
+    .footer-social a:hover { transform: translateY(-6px) rotate(8deg); background: var(--rose-gold); border-color: var(--rose-gold); box-shadow: 0 10px 30px rgba(183,110,121,.5); }
+    .footer-bottom { margin-top: 36px; padding-top: 28px; border-top: 1px solid rgba(183,110,121,.22); color: rgba(247,231,206,.58); font-size: 13px; font-weight: 300; }
+
+    /* Lightbox Modal */
+    .lightbox-modal { display: none; position: fixed; z-index: 1000; inset: 0; background-color: rgba(0,0,0,.75); animation: fadeIn .25s ease; }
+    .lightbox-modal .modal-content { position: relative; display: flex; align-items: center; justify-content: center; height: 100%; width: 100%; }
+    .lightbox-modal img { width: 100%; height: 100%; object-fit: contain; max-width: none; max-height: none; border-radius: 0; }
+
+    .close { position: absolute; top: 16px; right: 22px; color: var(--champagne); font-size: 36px; font-weight: bold; cursor: pointer; z-index: 1001; transition: color .25s ease; }
+    .close:hover { color: var(--rose-gold); }
+
+    .nav-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(183,110,121,.5); color: white; border: none; font-size: 28px; padding: 12px; cursor: pointer; border-radius: 50%; transition: background .25s ease, transform .2s ease; z-index: 1001; backdrop-filter: blur(6px); }
+    .nav-arrow:hover { background: var(--rose-gold); transform: translateY(-50%) scale(1.05); }
+    .prev { left: 18px; }
+    .next { right: 18px; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      :root { --sidebar-width: 100%; --thumb-height: 160px; }
+      body { flex-direction: column; }
+      .sidebar { position: relative; width: 100%; flex-direction: row; justify-content: space-around; align-items: center; height: auto; padding: 24px; gap: 16px; flex-wrap: wrap; }
+      .sidebar::before { display: none; }
+      .profile-pic { width: 92px; height: 92px; }
+      .artist-name { font-size: 22px; margin-top: 0; }
+      .artist-name::after { display: inline; margin-left: 8px; }
+      .bio, .contact { margin-top: 0; font-size: 13px; }
+      .social-icons { margin-top: 0; }
+      .social-icons a { width: 45px; height: 45px; font-size: 20px; }
+      .main { margin-left: 0; width: 100%; }
+      .banner { height: 40vh; min-height: 300px; }
+      /* Disable parallax on mobile for performance and correct sizing */
+      .section.bridal-section {
+        background:
+          linear-gradient(135deg, rgba(26, 10, 15, 0.60) 0%, rgba(74, 27, 46, 0.45) 100%),
+          url('https://i.imgur.com/6X9z4l0.jpeg') center center / cover no-repeat;
+        background-attachment: scroll;
+        min-height: 90vh;
+      }
+      .banner h1 { font-size: 34px; letter-spacing: 3px; }
+      .banner p { font-size: 16px; }
+      .btn-primary, .btn-secondary { padding: 13px 28px; font-size: 15px; }
+      .section { padding: 60px 22px; }
+      .section h2 { font-size: 34px; }
+      .section-subtitle { font-size: 15px; }
+      .testimonials, .connect-me { margin: 22px; padding: 60px 22px; }
+      .testimonial-card { width: 300px; padding: 34px; }
+      .footer { padding: 50px 22px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Lightbox Modal -->
+  <div id="lightboxModal" class="lightbox-modal" aria-hidden="true" role="dialog" aria-label="Image viewer">
+    <span class="close" aria-label="Close" role="button" tabindex="0">&times;</span>
+    <button class="nav-arrow prev" aria-label="Previous image" tabindex="0">&#10094;</button>
+    <div class="modal-content">
+      <img id="modalImage" src="" alt="Full Screen Image">
+    </div>
+    <button class="nav-arrow next" aria-label="Next image" tabindex="0">&#10095;</button>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="profile-pic" onclick="openModalProfile()">
+      <img id="profileImg" src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/WhatsApp%20Image%202025-09-21%20at%204.32.37%20PM.jpeg" alt="Your Name">
+    </div>
+    <div class="artist-name">Your Name</div>
+    <div class="bio">Professional makeup artist specializing in Telugu bridal artistry & contemporary looks.</div>
+    <div class="social-icons">
+      <a href="mailto:yourname@example.com" class="mail" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener" class="instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://youtube.com/@yourchannel" target="_blank" rel="noopener" class="youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    </div>
+    <div class="contact">
+      <p>📍 Hyderabad, India</p>
+      <p>📧 <a href="mailto:yourname@example.com">yourname@example.com</a></p>
+      <p>📱 <a href="tel:+919876543210">+91 9876543210</a></p>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main">
+    <!-- Banner -->
+    <div class="banner">
+      <video autoplay muted loop playsinline>
+        <source src="https://cdn.pixabay.com/video/2023/01/22/146271-793601802_tiny.mp4" type="video/mp4">
+      </video>
+      <div class="content">
+        <h1>Timeless Telugu Bridal Artistry</h1>
+        <p>Transforming beauty into timeless elegance ✨💄</p>
+        <div class="banner-buttons">
+          <a href="#connect-me" class="btn-primary">📅 Book Appointment</a>
+          <a href="#" class="btn-secondary" id="viewProfileBtn">👁 View Profile</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bridal Makeup Section -->
+    <div class="section bridal-section" id="bridal-section">
+      <h2>💍 Bridal Makeup</h2>
+      <p class="section-subtitle">Exquisite bridal transformations that capture your special day with elegance and grace</p>
+      <div class="gallery" data-gallery="bridal">
+        <div class="auto-scroll">
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/bridal/Kavya%20garu%20on%20her%20engagement%20Dm%20for%20bookings%23makeupartist%20%23weddingmakeupartist%20%23southindianbride%20(1).jpg" alt="Bridal Look 1"/></div>
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/bridal/341145404_555738826701737_6353492871385788204_n.jpg" alt="Bridal Look 2"/></div>
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/bridal/Kavya%20garu%20on%20her%20engagement%20Dm%20for%20bookings%23makeupartist%20%23weddingmakeupartist%20%23southindianbride%20(1).jpg" alt="Bridal Look 3"/></div>
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/bridal/341145404_555738826701737_6353492871385788204_n.jpg" alt="Bridal Look 4"/></div>
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/bridal/Kavya%20garu%20on%20her%20engagement%20Dm%20for%20bookings%23makeupartist%20%23weddingmakeupartist%20%23southindianbride%20(1).jpg" alt="Bridal Look 1"/></div>
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/bridal/341145404_555738826701737_6353492871385788204_n.jpg" alt="Bridal Look 2"/></div>
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/bridal/Kavya%20garu%20on%20her%20engagement%20Dm%20for%20bookings%23makeupartist%20%23weddingmakeupartist%20%23southindianbride%20(1).jpg" alt="Bridal Look 3"/></div>
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/bridal/341145404_555738826701737_6353492871385788204_n.jpg" alt="Bridal Look 4"/></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Party Makeup Section -->
+    <div class="section party-section">
+      <h2>🎉 Party Makeup</h2>
+      <p class="section-subtitle">Glamorous and sophisticated looks for every celebration and special occasion</p>
+      <div class="gallery" data-gallery="party">
+        <div class="auto-scroll">
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/party/party1.jpg" alt="Party Look 1"/></div>
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/party/party2.jpg" alt="Party Look 2"/></div>
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/party/party1.jpg" alt="Party Look 3"/></div>
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/party/party2.jpg" alt="Party Look 4"/></div>
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/party/party1.jpg" alt="Party Look 1"/></div>
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/party/party2.jpg" alt="Party Look 2"/></div>
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/party/party1.jpg" alt="Party Look 3"/></div>
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/party/party2.jpg" alt="Party Look 4"/></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Miscellaneous Makeup Section -->
+    <div class="section misc-section">
+      <h2>✨ Signature Looks</h2>
+      <p class="section-subtitle">Versatile artistry for every occasion - from casual elegance to red carpet glamour</p>
+      <div class="gallery" data-gallery="misc">
+        <div class="auto-scroll">
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/misc/misc1.jpg" alt="Misc Look 1"/></div>
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/misc/misc2.jpg" alt="Misc Look 2"/></div>
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/misc/misc1.jpg" alt="Misc Look 3"/></div>
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/misc/misc2.jpg" alt="Misc Look 4"/></div>
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/misc/misc1.jpg" alt="Misc Look 1"/></div>
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/misc/misc2.jpg" alt="Misc Look 2"/></div>
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/misc/misc1.jpg" alt="Misc Look 3"/></div>
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/misc/misc2.jpg" alt="Misc Look 4"/></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="testimonials">
+      <h2>💖 What Brides Say</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-text">"She made me feel like a princess on my wedding day! The makeup was absolutely flawless and lasted throughout all the ceremonies. Every detail was perfect!"</p>
+          <p class="testimonial-author">— Kavya R.</p>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">"Highly professional and incredibly creative! She understood exactly what I wanted and delivered beyond my wildest expectations. A true artist with a magical touch!"</p>
+          <p class="testimonial-author">— Sita M.</p>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">"The best makeup artist in Hyderabad! Her attention to detail and passion for her craft really shows in her work. I felt beautiful, confident and radiant!"</p>
+          <p class="testimonial-author">— Priya K.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Connect Form -->
+    <div class="connect-me" id="connect-me">
+      <h2>✨ Let's Create Magic Together</h2>
+      <p class="section-subtitle">Book your appointment and let's make your beauty dreams come true</p>
+      <form class="connect-form" onsubmit="event.preventDefault(); window.location.href='mailto:yourname@example.com';">
+        <input type="text" placeholder="Your Name *" required>
+        <input type="email" placeholder="Your Email *" required>
+        <input type="tel" placeholder="Your Phone Number *" required>
+        <textarea placeholder="Tell me about your event and makeup preferences *" required></textarea>
+        <button type="submit">💌 Send Inquiry</button>
+      </form>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <div class="footer-content">
+        <div class="footer-logo">Your Name 💄</div>
+        <p class="footer-text">Professional Makeup Artist | Telugu Bridal Specialist | Hyderabad</p>
+        <div class="footer-social">
+          <a href="mailto:yourname@example.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://youtube.com/@yourchannel" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://wa.me/919876543210" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Your Name. All Rights Reserved. | Designed with ❤️ & ✨ in Hyderabad</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let currentGallery = [];
+    let currentIndex = 0;
+
+    const modal = document.getElementById('lightboxModal');
+    const modalImg = document.getElementById('modalImage');
+    const closeBtn = document.querySelector('.close');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+
+    // Open Profile in modal
+    function openModalProfile() {
+      const src = document.getElementById('profileImg').src;
+      openModalWithSrc(src, [src]);
+    }
+
+    // Wire View Profile CTA
+    document.getElementById('viewProfileBtn').addEventListener('click', function(e) {
+      e.preventDefault();
+      openModalProfile();
+    });
+
+    // Attach click to all thumbs (event delegation)
+    document.addEventListener('click', function(e) {
+      const img = e.target.closest('.thumb img');
+      if (!img) return;
+      const galleryWrap = img.closest('.gallery');
+      const galleryType = galleryWrap?.getAttribute('data-gallery') || 'all';
+      const allImgs = Array.from(galleryWrap.querySelectorAll('img'))
+        .map(node => node.src)
+        .filter((val, idx, self) => self.indexOf(val) === idx);
+      openModalWithSrc(img.src, allImgs);
+    });
+
+    function openModalWithSrc(src, galleryArray) {
+      currentGallery = Array.isArray(galleryArray) ? galleryArray : [src];
+      currentIndex = currentGallery.indexOf(src);
+      if (currentIndex < 0) currentIndex = 0;
+      modalImg.src = currentGallery[currentIndex];
+      modal.style.display = 'block';
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = 'auto';
+    }
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) closeModal();
+    });
+
+    // Keyboard support
+    document.addEventListener('keydown', function(event) {
+      if (modal.style.display === 'block') {
+        if (event.key === 'Escape') {
+          closeModal();
+        } else if (event.key === 'ArrowLeft') {
+          changeImage(-1);
+        } else if (event.key === 'ArrowRight') {
+          changeImage(1);
+        }
+      }
+    });
+
+    // Navigation
+    function changeImage(direction) {
+      if (!currentGallery.length) return;
+      currentIndex = (currentIndex + direction + currentGallery.length) % currentGallery.length;
+      modalImg.src = currentGallery[currentIndex];
+    }
+
+    prevBtn.addEventListener('click', () => changeImage(-1));
+    nextBtn.addEventListener('click', () => changeImage(1));
+
+    // Swipe support for touch devices
+    let touchStartX = 0;
+    let touchEndX = 0;
+    modal.addEventListener('touchstart', e => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+    modal.addEventListener('touchend', e => {
+      touchEndX = e.changedTouches[0].screenX;
+      const delta = touchEndX - touchStartX;
+      if (Math.abs(delta) > 40) {
+        if (delta > 0) changeImage(-1); else changeImage(1);
+      }
+    });
+  </script>
+</body>
+</html>
