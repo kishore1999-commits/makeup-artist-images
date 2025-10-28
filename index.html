@@ -1,0 +1,1420 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Telugu Bridal Artistry - Your Name</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:wght@400;600;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --gap: 16px;
+      --thumb-height: 220px;
+      --sidebar-width: 300px;
+      --rose-gold: #b76e79;
+      --deep-rose: #8b4357;
+      --champagne: #f7e7ce;
+      --burgundy: #6b1b3d;
+      --blush: #ffc9d9;
+      --gold-shimmer: #d4af37;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #1a0a0f;
+      color: #fff;
+      display: flex;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+    /* Animated particles background */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(circle at 20% 50%, rgba(183, 110, 121, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(139, 67, 87, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(247, 231, 206, 0.1) 0%, transparent 40%);
+      animation: bgShift 15s ease infinite;
+      z-index: 0;
+    }
+    @keyframes bgShift {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.1); }
+    }
+    /* Sidebar */
+    .sidebar {
+      width: var(--sidebar-width);
+      background: linear-gradient(180deg, #2d0a1a 0%, #4a1b2e 40%, #6b1b3d 100%);
+      padding: 40px 24px;
+      box-shadow: 4px 0 40px rgba(183, 110, 121, 0.4);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      overflow-y: auto;
+      z-index: 100;
+      border-right: 2px solid rgba(183, 110, 121, 0.4);
+    }
+    .sidebar::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image:
+        radial-gradient(circle, rgba(247, 231, 206, 0.05) 1px, transparent 1px);
+      background-size: 30px 30px;
+      animation: sparkleMove 20s linear infinite;
+    }
+    @keyframes sparkleMove {
+      0% { background-position: 0 0; }
+      100% { background-position: 30px 30px; }
+    }
+    .profile-pic {
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow:
+        0 0 0 6px rgba(183, 110, 121, 0.5),
+        0 0 0 12px rgba(247, 231, 206, 0.25),
+        0 18px 70px rgba(183, 110, 121, 0.7);
+      cursor: pointer;
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      z-index: 2;
+    }
+  
+    .profile-pic::before {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, var(--rose-gold), var(--gold-shimmer), var(--deep-rose), var(--champagne));
+      background-size: 300% 300%;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      animation: gradientShift 4s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+  
+    .profile-pic:hover::before {
+      opacity: 1;
+    }
+  
+    .profile-pic:hover {
+      transform: scale(1.15) translateY(-10px);
+      box-shadow:
+        0 0 0 6px rgba(183, 110, 121, 0.7),
+        0 0 0 12px rgba(247, 231, 206, 0.4),
+        0 28px 90px rgba(183, 110, 121, 0.9);
+    }
+    .profile-pic img { 
+      width: 100%; 
+      height: 100%; 
+      object-fit: cover;
+      filter: brightness(1.05) contrast(1.1);
+    }
+    .artist-name {
+      font-size: 30px;
+      font-weight: 700;
+      margin-top: 24px;
+      text-align: center;
+      color: var(--champagne);
+      font-family: 'Playfair Display', serif;
+      text-shadow: 3px 3px 12px rgba(0,0,0,0.7);
+      letter-spacing: 2.5px;
+      position: relative;
+      z-index: 2;
+    }
+  
+    .artist-name::after {
+      content: '💄✨';
+      display: block;
+      font-size: 20px;
+      margin-top: 10px;
+      animation: twinkle 2.5s ease-in-out infinite;
+    }
+  
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.6; transform: scale(1) rotate(0deg); }
+      50% { opacity: 1; transform: scale(1.2) rotate(5deg); }
+    }
+  
+    .bio {
+      font-size: 14px;
+      color: rgba(247, 231, 206, 0.88);
+      text-align: center;
+      margin-top: 18px;
+      line-height: 1.8;
+      font-weight: 300;
+      position: relative;
+      z-index: 2;
+    }
+  
+    .social-icons {
+      margin-top: 32px;
+      display: flex;
+      gap: 20px;
+      position: relative;
+      z-index: 2;
+    }
+  
+    .social-icons a {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 23px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      background: rgba(247, 231, 206, 0.08);
+      backdrop-filter: blur(20px);
+      border: 2px solid rgba(183, 110, 121, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+  
+    .social-icons a::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle, rgba(247, 231, 206, 0.5) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+  
+    .social-icons a:hover::before {
+      opacity: 1;
+    }
+  
+    .social-icons a:hover {
+      transform: translateY(-12px) scale(1.25) rotate(12deg);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.6);
+    }
+  
+    .social-icons .youtube { color: var(--champagne); }
+    .social-icons .youtube:hover {
+      background: linear-gradient(135deg, #FF0000, #CC0000);
+      border-color: #FF0000;
+      box-shadow: 0 18px 40px rgba(255, 0, 0, 0.7);
+    }
+  
+    .social-icons .instagram { color: var(--champagne); }
+    .social-icons .instagram:hover {
+      background: linear-gradient(135deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+      border-color: #e1306c;
+      box-shadow: 0 18px 40px rgba(225, 48, 108, 0.7);
+    }
+  
+    .social-icons .mail { color: var(--champagne); }
+    .social-icons .mail:hover {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-color: #667eea;
+      box-shadow: 0 18px 40px rgba(102, 126, 234, 0.7);
+    }
+    .contact {
+      margin-top: 32px;
+      font-size: 14px;
+      color: rgba(247, 231, 206, 0.92);
+      text-align: center;
+      line-height: 2.3;
+      font-weight: 300;
+      position: relative;
+      z-index: 2;
+    }
+  
+    .contact p {
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+  
+    .contact p:hover {
+      transform: translateX(5px);
+      color: var(--blush);
+    }
+  
+    .contact a {
+      color: var(--blush);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      position: relative;
+      font-weight: 400;
+    }
+  
+    .contact a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(to right, var(--blush), var(--rose-gold));
+      transition: width 0.3s ease;
+    }
+  
+    .contact a:hover::after {
+      width: 100%;
+    }
+    /* Main content */
+    .main {
+      margin-left: var(--sidebar-width);
+      width: calc(100% - var(--sidebar-width));
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      z-index: 1;
+    }
+    /* MINIMAL BANNER - Just Animation */
+    .banner {
+      position: relative;
+      width: 100%;
+      height: 25vh; /* Much smaller - just decorative */
+      overflow: hidden;
+    }
+  
+    .banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(107, 27, 61, 0.7) 0%, rgba(183, 110, 121, 0.6) 100%);
+      z-index: 1;
+      mix-blend-mode: overlay;
+    }
+  
+    .banner video {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      filter: brightness(0.5) saturate(1.4);
+    }
+  
+    /* Floating particles overlay */
+    .banner::after {
+      content: '✨';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 80px;
+      opacity: 0.15;
+      animation: bannerFloat 4s ease-in-out infinite;
+      z-index: 2;
+      text-shadow: 0 0 30px rgba(247, 231, 206, 0.5);
+    }
+
+    @keyframes bannerFloat {
+      0%, 100% { 
+        transform: translate(-50%, -50%) scale(1) rotate(0deg); 
+        opacity: 0.15;
+      }
+      50% { 
+        transform: translate(-50%, -50%) scale(1.3) rotate(180deg); 
+        opacity: 0.25;
+      }
+    }
+
+    /* Sections */
+    .section {
+      padding: 100px 50px;
+      position: relative;
+      overflow: hidden;
+    }
+  
+    .section:nth-child(odd) {
+      background: rgba(26, 10, 15, 0.6);
+    }
+  
+    /* ENHANCED Bridal Section - MORE VISIBLE SYMBOLS */
+    .section.bridal-section {
+      background:
+        linear-gradient(135deg, rgba(45, 10, 26, 0.95) 0%, rgba(74, 27, 46, 0.92) 100%);
+      position: relative;
+    }
+  
+    .section.bridal-section::before {
+      content: '💄';
+      position: absolute;
+      font-size: 220px;
+      opacity: 0.12; /* Increased from 0.06 */
+      top: 10%;
+      right: 6%;
+      animation: float 6s ease-in-out infinite;
+      filter: blur(0.5px);
+      pointer-events: none;
+    }
+  
+    .section.bridal-section::after {
+      content: '👰';
+      position: absolute;
+      font-size: 260px;
+      opacity: 0.1; /* Increased from 0.05 */
+      bottom: 5%;
+      left: 3%;
+      animation: floatReverse 8s ease-in-out infinite;
+      filter: blur(0.5px);
+      pointer-events: none;
+    }
+  
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(-5deg); }
+      50% { transform: translateY(-35px) rotate(5deg); }
+    }
+  
+    @keyframes floatReverse {
+      0%, 100% { transform: translateY(0) rotate(5deg); }
+      50% { transform: translateY(-30px) rotate(-5deg); }
+    }
+  
+    /* Makeup brush decoration - MORE VISIBLE */
+    .bridal-section .brush-decor {
+      position: absolute;
+      width: 140px;
+      height: 140px;
+      opacity: 0.25; /* Increased from 0.18 */
+      animation: rotateSlow 25s linear infinite;
+      pointer-events: none;
+    }
+  
+    .bridal-section .brush-1 {
+      top: 15%;
+      left: 6%;
+      animation-delay: 0s;
+    }
+  
+    .bridal-section .brush-2 {
+      bottom: 18%;
+      right: 8%;
+      animation-delay: -5s;
+    }
+  
+    @keyframes rotateSlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+  
+    /* ENHANCED Party Section - MORE VISIBLE */
+    .section.party-section {
+      background:
+        linear-gradient(135deg, rgba(107, 27, 61, 0.35) 0%, rgba(183, 110, 121, 0.28) 100%),
+        rgba(26, 10, 15, 0.88);
+      position: relative;
+    }
+  
+    .section.party-section::before {
+      content: '🎊';
+      position: absolute;
+      font-size: 200px;
+      opacity: 0.14; /* Increased from 0.07 */
+      top: 15%;
+      left: 5%;
+      animation: bounce 4s ease-in-out infinite;
+      pointer-events: none;
+    }
+  
+    .section.party-section::after {
+      content: '🥂';
+      position: absolute;
+      font-size: 180px;
+      opacity: 0.15; /* Increased from 0.08 */
+      bottom: 10%;
+      right: 7%;
+      animation: swing 5s ease-in-out infinite;
+      pointer-events: none;
+    }
+  
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-45px) scale(1.12); }
+    }
+  
+    @keyframes swing {
+      0%, 100% { transform: rotate(-12deg); }
+      50% { transform: rotate(12deg); }
+    }
+  
+    /* ENHANCED Misc Section - MORE VISIBLE */
+    .section.misc-section {
+      background:
+        linear-gradient(135deg, rgba(247, 231, 206, 0.14) 0%, rgba(183, 110, 121, 0.18) 100%),
+        rgba(26, 10, 15, 0.9);
+      position: relative;
+    }
+  
+    .section.misc-section::before {
+      content: '✨';
+      position: absolute;
+      font-size: 190px;
+      opacity: 0.18; /* Increased from 0.09 */
+      top: 18%;
+      right: 8%;
+      animation: pulse 4s ease-in-out infinite;
+      pointer-events: none;
+    }
+  
+    .section.misc-section::after {
+      content: '💫';
+      position: absolute;
+      font-size: 170px;
+      opacity: 0.2; /* Increased from 0.1 */
+      bottom: 15%;
+      left: 5%;
+      animation: twirl 6s ease-in-out infinite;
+      pointer-events: none;
+    }
+  
+    @keyframes pulse {
+      0%, 100% { opacity: 0.12; transform: scale(1); }
+      50% { opacity: 0.25; transform: scale(1.18); }
+    }
+  
+    @keyframes twirl {
+      0%, 100% { transform: rotate(0deg) scale(1); }
+      50% { transform: rotate(180deg) scale(1.12); }
+    }
+  
+    .section h2 {
+      color: var(--champagne);
+      font-size: 54px;
+      margin-bottom: 20px;
+      font-family: 'Playfair Display', serif;
+      position: relative;
+      display: inline-block;
+      font-weight: 700;
+      letter-spacing: 3px;
+      animation: slideInLeft 0.8s ease-out;
+      text-shadow: 3px 3px 15px rgba(0,0,0,0.6);
+    }
+  
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  
+    .section h2::before {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 0;
+      width: 110px;
+      height: 5px;
+      background: linear-gradient(to right, var(--rose-gold), var(--gold-shimmer), var(--blush));
+      border-radius: 3px;
+      box-shadow: 0 0 30px rgba(183, 110, 121, 0.7);
+    }
+  
+    .section-subtitle {
+      color: rgba(247, 231, 206, 0.75);
+      font-size: 18px;
+      font-weight: 300;
+      margin-top: 32px;
+      margin-bottom: 50px;
+      letter-spacing: 1.5px;
+      animation: fadeIn 1s ease-out 0.3s both;
+      line-height: 1.7;
+    }
+  
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    /* Gallery */
+    .gallery {
+      display: flex;
+      gap: var(--gap);
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(247, 231, 206, 0.06) 0%, rgba(183, 110, 121, 0.1) 100%);
+      padding: 40px;
+      border-radius: 30px;
+      box-shadow:
+        0 12px 50px rgba(0,0,0,0.5),
+        inset 0 2px 0 rgba(247, 231, 206, 0.18);
+      border: 2px solid rgba(183, 110, 121, 0.25);
+      backdrop-filter: blur(30px);
+    }
+  
+    .auto-scroll {
+      display: flex;
+      animation: scrollGallery 50s linear infinite;
+    }
+  
+    .gallery:hover .auto-scroll {
+      animation-play-state: paused;
+    }
+    @keyframes scrollGallery {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .thumb {
+      flex: 0 0 auto;
+      height: var(--thumb-height);
+      border-radius: 20px;
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+      margin-right: var(--gap);
+      box-shadow:
+        0 12px 40px rgba(0,0,0,0.6),
+        0 0 0 2px rgba(183, 110, 121, 0.4);
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  
+    .thumb::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(183, 110, 121, 0.5) 0%, rgba(107, 27, 61, 0.5) 100%);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      z-index: 1;
+    }
+  
+    .thumb::after {
+      content: '💕';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      font-size: 45px;
+      z-index: 2;
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      text-shadow: 2px 2px 12px rgba(0,0,0,0.9);
+    }
+  
+    .thumb:hover::before {
+      opacity: 1;
+    }
+  
+    .thumb:hover::after {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  
+    .thumb img {
+      height: 100%;
+      width: auto;
+      transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+      filter: brightness(0.88) saturate(1.15);
+    }
+  
+    .thumb:hover {
+      box-shadow:
+        0 25px 70px rgba(183, 110, 121, 0.7),
+        0 0 0 3px var(--rose-gold);
+      transform: translateY(-15px) scale(1.08);
+    }
+  
+    .thumb:hover img {
+      transform: scale(1.25);
+      filter: brightness(1.1) saturate(1.4);
+    }
+    /* Testimonials */
+    .testimonials {
+      padding: 100px 50px;
+      background:
+        linear-gradient(135deg, rgba(45, 10, 26, 0.88) 0%, rgba(74, 27, 46, 0.75) 100%),
+        rgba(26, 10, 15, 0.95);
+      margin: 50px 50px;
+      border-radius: 38px;
+      box-shadow:
+        0 25px 80px rgba(0,0,0,0.6),
+        inset 0 2px 0 rgba(247, 231, 206, 0.18);
+      text-align: center;
+      border: 2px solid rgba(183, 110, 121, 0.35);
+      position: relative;
+      overflow: hidden;
+    }
+  
+    .testimonials::before {
+      content: '"';
+      position: absolute;
+      top: 30px;
+      left: 50px;
+      font-size: 240px;
+      font-family: 'Playfair Display', serif;
+      color: rgba(183, 110, 121, 0.14);
+      line-height: 1;
+    }
+  
+    .testimonials h2 {
+      margin-bottom: 70px;
+    }
+  
+    .testimonial-grid {
+      display: flex;
+      gap: 40px;
+      overflow-x: auto;
+      padding: 30px 15px;
+      scroll-behavior: smooth;
+    }
+  
+    .testimonial-grid::-webkit-scrollbar {
+      height: 12px;
+    }
+  
+    .testimonial-grid::-webkit-scrollbar-track {
+      background: rgba(247, 231, 206, 0.1);
+      border-radius: 6px;
+    }
+  
+    .testimonial-grid::-webkit-scrollbar-thumb {
+      background: linear-gradient(to right, var(--rose-gold), var(--gold-shimmer));
+      border-radius: 6px;
+    }
+  
+    .testimonial-card {
+      flex: 0 0 auto;
+      width: 420px;
+      background: linear-gradient(135deg, rgba(247, 231, 206, 0.1) 0%, rgba(183, 110, 121, 0.08) 100%);
+      padding: 50px;
+      border-radius: 26px;
+      box-shadow:
+        0 12px 50px rgba(0,0,0,0.5),
+        inset 0 2px 0 rgba(247, 231, 206, 0.15);
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 2px solid rgba(183, 110, 121, 0.25);
+      backdrop-filter: blur(30px);
+      position: relative;
+    }
+  
+    .testimonial-card::before {
+      content: '⭐⭐⭐⭐⭐';
+      display: block;
+      margin-bottom: 28px;
+      font-size: 22px;
+      opacity: 0.95;
+    }
+  
+    .testimonial-card:hover {
+      transform: translateY(-18px) scale(1.04);
+      box-shadow:
+        0 30px 85px rgba(183, 110, 121, 0.6),
+        inset 0 2px 0 rgba(247, 231, 206, 0.25);
+      border-color: var(--rose-gold);
+    }
+  
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 30px;
+      color: rgba(247, 231, 206, 0.88);
+      line-height: 2;
+      font-size: 17px;
+      font-weight: 300;
+    }
+  
+    .testimonial-author {
+      font-weight: 600;
+      color: var(--blush);
+      font-size: 18px;
+      letter-spacing: 1.5px;
+    }
+    /* Connect Form */
+    .connect-me {
+      padding: 100px 50px;
+      background:
+        linear-gradient(135deg, rgba(107, 27, 61, 0.35) 0%, rgba(183, 110, 121, 0.28) 100%),
+        rgba(26, 10, 15, 0.95);
+      margin: 50px 50px;
+      border-radius: 38px;
+      box-shadow:
+        0 25px 80px rgba(0,0,0,0.6),
+        inset 0 2px 0 rgba(247, 231, 206, 0.18);
+      text-align: center;
+      border: 2px solid rgba(183, 110, 121, 0.35);
+    }
+  
+    .connect-me h2 {
+      margin-bottom: 70px;
+    }
+  
+    .connect-form {
+      max-width: 680px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+    }
+  
+    .connect-form input,
+    .connect-form textarea {
+      padding: 22px 30px;
+      border: 2px solid rgba(183, 110, 121, 0.35);
+      border-radius: 20px;
+      font-size: 17px;
+      background: rgba(247, 231, 206, 0.08);
+      color: var(--champagne);
+      font-family: 'Poppins', sans-serif;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(20px);
+    }
+  
+    .connect-form input:focus,
+    .connect-form textarea:focus {
+      outline: none;
+      border-color: var(--rose-gold);
+      background: rgba(247, 231, 206, 0.12);
+      box-shadow: 0 0 35px rgba(183, 110, 121, 0.5);
+      transform: translateY(-3px);
+    }
+  
+    .connect-form input::placeholder,
+    .connect-form textarea::placeholder {
+      color: rgba(247, 231, 206, 0.55);
+    }
+  
+    .connect-form textarea {
+      resize: vertical;
+      min-height: 160px;
+    }
+  
+    .connect-form button {
+      padding: 22px 60px;
+      background: linear-gradient(135deg, var(--rose-gold) 0%, var(--burgundy) 100%);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 19px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 12px 50px rgba(183, 110, 121, 0.6);
+      position: relative;
+      overflow: hidden;
+      border: 2px solid rgba(247, 231, 206, 0.3);
+    }
+  
+    .connect-form button::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.35);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s ease, height 0.6s ease;
+    }
+  
+    .connect-form button:hover::before {
+      width: 500px;
+      height: 500px;
+    }
+  
+    .connect-form button:hover {
+      transform: translateY(-8px) scale(1.08);
+      box-shadow: 0 25px 75px rgba(183, 110, 121, 0.8);
+      border-color: var(--champagne);
+    }
+  
+    .connect-form button:active {
+      transform: translateY(-4px) scale(1.04);
+    }
+    /* Footer */
+    .footer {
+      background: linear-gradient(180deg, rgba(45, 10, 26, 0.98) 0%, #1a0a0f 100%);
+      padding: 80px 50px 40px;
+      text-align: center;
+      border-top: 2px solid rgba(183, 110, 121, 0.35);
+      position: relative;
+    }
+  
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  
+    .footer-logo {
+      font-size: 38px;
+      font-family: 'Playfair Display', serif;
+      color: var(--rose-gold);
+      margin-bottom: 28px;
+      font-weight: 700;
+      text-shadow: 2px 2px 12px rgba(0,0,0,0.6);
+    }
+  
+    .footer-text {
+      color: rgba(247, 231, 206, 0.75);
+      font-size: 16px;
+      margin-bottom: 38px;
+      font-weight: 300;
+      letter-spacing: 1px;
+    }
+  
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      margin-bottom: 40px;
+    }
+  
+    .footer-social a {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(247, 231, 206, 0.1);
+      border: 2px solid rgba(183, 110, 121, 0.35);
+      color: var(--champagne);
+      font-size: 22px;
+      transition: all 0.3s ease;
+    }
+  
+    .footer-social a:hover {
+      transform: translateY(-8px) rotate(12deg);
+      background: var(--rose-gold);
+      border-color: var(--rose-gold);
+      box-shadow: 0 12px 35px rgba(183, 110, 121, 0.6);
+    }
+  
+    .footer-bottom {
+      margin-top: 50px;
+      padding-top: 38px;
+      border-top: 1px solid rgba(183, 110, 121, 0.25);
+      color: rgba(247, 231, 206, 0.6);
+      font-size: 14px;
+      font-weight: 300;
+    }
+  
+    .footer-bottom a {
+      color: var(--rose-gold);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+  
+    .footer-bottom a:hover {
+      color: var(--blush);
+    }
+    /* ENHANCED LIGHTBOX MODAL - FULL SCREEN */
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      z-index: 10000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.92);
+      animation: fadeInModal 0.4s ease;
+      backdrop-filter: blur(15px);
+    }
+
+    @keyframes fadeInModal {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .lightbox-modal .modal-content {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      padding: 20px;
+    }
+
+    .lightbox-modal img {
+      max-width: 98vw;
+      max-height: 98vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 0 80px rgba(183, 110, 121, 0.8);
+      animation: zoomIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    @keyframes zoomIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .close {
+      position: fixed;
+      top: 25px;
+      right: 35px;
+      color: var(--champagne);
+      font-size: 50px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 10001;
+      transition: all 0.3s ease;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+      background: rgba(107, 27, 61, 0.4);
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid rgba(183, 110, 121, 0.5);
+      backdrop-filter: blur(10px);
+    }
+
+    .close:hover {
+      color: var(--rose-gold);
+      transform: rotate(90deg) scale(1.1);
+      background: rgba(183, 110, 121, 0.6);
+      box-shadow: 0 0 30px rgba(183, 110, 121, 0.8);
+    }
+
+    .nav-arrow {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(107, 27, 61, 0.7);
+      color: white;
+      border: 2px solid rgba(183, 110, 121, 0.6);
+      font-size: 36px;
+      padding: 20px 18px;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: all 0.4s ease;
+      z-index: 10001;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+      width: 70px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-arrow:hover {
+      background: var(--rose-gold);
+      transform: translateY(-50%) scale(1.2);
+      box-shadow: 0 12px 45px rgba(183, 110, 121, 0.8);
+      border-color: var(--champagne);
+    }
+
+    .nav-arrow:active {
+      transform: translateY(-50%) scale(1.05);
+    }
+
+    .prev { left: 30px; }
+    .next { right: 30px; }
+
+    /* Image counter */
+    .image-counter {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(107, 27, 61, 0.8);
+      color: var(--champagne);
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      z-index: 10001;
+      border: 2px solid rgba(183, 110, 121, 0.5);
+      backdrop-filter: blur(15px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+    }
+
+    /* Responsive */
+    @media(max-width: 900px) {
+      :root {
+        --sidebar-width: 100%;
+        --thumb-height: 170px;
+      }
+    
+      body {
+        flex-direction: column;
+      }
+    
+      .sidebar {
+        position: relative;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        height: auto;
+        padding: 25px;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+    
+      .sidebar::before {
+        display: none;
+      }
+    
+      .profile-pic {
+        width: 120px;
+        height: 120px;
+      }
+    
+      .artist-name {
+        font-size: 24px;
+        margin-top: 0;
+      }
+    
+      .artist-name::after {
+        display: inline;
+        margin-left: 10px;
+      }
+    
+      .bio {
+        margin-top: 0;
+        font-size: 13px;
+      }
+    
+      .social-icons {
+        margin-top: 0;
+      }
+    
+      .social-icons a {
+        width: 48px;
+        height: 48px;
+        font-size: 21px;
+      }
+    
+      .contact {
+        margin-top: 0;
+        font-size: 13px;
+      }
+    
+      .main {
+        margin-left: 0;
+        width: 100%;
+        padding: 0;
+      }
+    
+      .banner {
+        height: 20vh;
+      }
+    
+      .section {
+        padding: 70px 25px;
+      }
+    
+      .section h2 {
+        font-size: 38px;
+      }
+    
+      .section-subtitle {
+        font-size: 16px;
+      }
+    
+      .testimonials,
+      .connect-me {
+        margin: 25px;
+        padding: 70px 25px;
+      }
+    
+      .testimonial-card {
+        width: 320px;
+        padding: 40px;
+      }
+    
+      .footer {
+        padding: 60px 25px 30px;
+      }
+
+      /* Mobile lightbox adjustments */
+      .close {
+        top: 15px;
+        right: 15px;
+        font-size: 40px;
+        width: 55px;
+        height: 55px;
+      }
+
+      .nav-arrow {
+        font-size: 28px;
+        width: 55px;
+        height: 55px;
+        padding: 15px 12px;
+      }
+
+      .prev { left: 15px; }
+      .next { right: 15px; }
+
+      .image-counter {
+        bottom: 20px;
+        font-size: 14px;
+        padding: 10px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- ENHANCED LIGHTBOX MODAL -->
+  <div id="lightboxModal" class="lightbox-modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <button class="nav-arrow prev" onclick="changeImage(-1)">&#10094;</button>
+    <div class="modal-content">
+      <img id="modalImage" src="" alt="Full Screen Image">
+    </div>
+    <button class="nav-arrow next" onclick="changeImage(1)">&#10095;</button>
+    <div class="image-counter" id="imageCounter"></div>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="profile-pic" onclick="openModalProfile()">
+      <img id="profileImg" src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/WhatsApp%20Image%202025-09-21%20at%204.32.37%20PM.jpeg" alt="Your Name">
+    </div>
+    <div class="artist-name">Your Name</div>
+    <div class="bio">Professional makeup artist specializing in Telugu bridal artistry & contemporary looks.</div>
+    <div class="social-icons">
+      <a href="mailto:yourname@example.com" class="mail" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener" class="instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://youtube.com/@yourchannel" target="_blank" rel="noopener" class="youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    </div>
+    <div class="contact">
+      <p>📍 Hyderabad, India</p>
+      <p>📧 <a href="mailto:yourname@example.com">yourname@example.com</a></p>
+      <p>📱 <a href="tel:+919876543210">+91 9876543210</a></p>
+    </div>
+  </div>
+  <!-- Main Content -->
+  <div class="main">
+    <!-- MINIMAL BANNER - Just Beautiful Animation -->
+    <div class="banner">
+      <video autoplay muted loop playsinline>
+        <source src="https://cdn.pixabay.com/video/2023/01/22/146271-793601802_tiny.mp4" type="video/mp4">
+      </video>
+    </div>
+    
+    <!-- Bridal Makeup Section -->
+    <div class="section bridal-section fade-in-up" id="bridal-section">
+      <!-- Makeup brush decorations -->
+      <svg class="brush-decor brush-1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50 10 L55 80 L50 90 L45 80 Z" fill="var(--rose-gold)" opacity="0.4"/>
+        <circle cx="50" cy="10" r="8" fill="var(--champagne)" opacity="0.5"/>
+      </svg>
+      <svg class="brush-decor brush-2" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50 10 L55 80 L50 90 L45 80 Z" fill="var(--rose-gold)" opacity="0.4"/>
+        <circle cx="50" cy="10" r="8" fill="var(--champagne)" opacity="0.5"/>
+      </svg>
+    
+      <h2>💍 Bridal Makeup</h2>
+      <p class="section-subtitle">Exquisite bridal transformations that capture your special day with elegance and grace</p>
+      <div class="gallery" data-gallery="bridal">
+        <div class="auto-scroll">
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/bridal/Kavya%20garu%20on%20her%20engagement%20Dm%20for%20bookings%23makeupartist%20%23weddingmakeupartist%20%23southindianbride%20(1).jpg" alt="Bridal Look 1" onclick="openModal(event, this.src, 'bridal')"/></div>
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/bridal/341145404_555738826701737_6353492871385788204_n.jpg" alt="Bridal Look 2" onclick="openModal(event, this.src, 'bridal')"/></div>
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/bridal/Kavya%20garu%20on%20her%20engagement%20Dm%20for%20bookings%23makeupartist%20%23weddingmakeupartist%20%23southindianbride%20(1).jpg" alt="Bridal Look 3" onclick="openModal(event, this.src, 'bridal')"/></div>
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/bridal/341145404_555738826701737_6353492871385788204_n.jpg" alt="Bridal Look 4" onclick="openModal(event, this.src, 'bridal')"/></div>
+          <!-- Duplicates for seamless scroll -->
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/bridal/Kavya%20garu%20on%20her%20engagement%20Dm%20for%20bookings%23makeupartist%20%23weddingmakeupartist%20%23southindianbride%20(1).jpg" alt="Bridal Look 1" onclick="openModal(event, this.src, 'bridal')"/></div>
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/bridal/341145404_555738826701737_6353492871385788204_n.jpg" alt="Bridal Look 2" onclick="openModal(event, this.src, 'bridal')"/></div>
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/bridal/Kavya%20garu%20on%20her%20engagement%20Dm%20for%20bookings%23makeupartist%20%23weddingmakeupartist%20%23southindianbride%20(1).jpg" alt="Bridal Look 3" onclick="openModal(event, this.src, 'bridal')"/></div>
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/bridal/341145404_555738826701737_6353492871385788204_n.jpg" alt="Bridal Look 4" onclick="openModal(event, this.src, 'bridal')"/></div>
+        </div>
+      </div>
+    </div>
+    <!-- Party Makeup Section -->
+    <div class="section party-section fade-in-up">
+      <h2>🎉 Party Makeup</h2>
+      <p class="section-subtitle">Glamorous and sophisticated looks for every celebration and special occasion</p>
+      <div class="gallery" data-gallery="party">
+        <div class="auto-scroll">
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/party/party1.jpg" alt="Party Look 1" onclick="openModal(event, this.src, 'party')"/></div>
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/party/party2.jpg" alt="Party Look 2" onclick="openModal(event, this.src, 'party')"/></div>
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/party/party1.jpg" alt="Party Look 3" onclick="openModal(event, this.src, 'party')"/></div>
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/party/party2.jpg" alt="Party Look 4" onclick="openModal(event, this.src, 'party')"/></div>
+          <!-- Duplicates -->
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/party/party1.jpg" alt="Party Look 1" onclick="openModal(event, this.src, 'party')"/></div>
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/party/party2.jpg" alt="Party Look 2" onclick="openModal(event, this.src, 'party')"/></div>
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/party/party1.jpg" alt="Party Look 3" onclick="openModal(event, this.src, 'party')"/></div>
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/party/party2.jpg" alt="Party Look 4" onclick="openModal(event, this.src, 'party')"/></div>
+        </div>
+      </div>
+    </div>
+    <!-- Miscellaneous Makeup Section -->
+    <div class="section misc-section fade-in-up">
+      <h2>✨ Signature Looks</h2>
+      <p class="section-subtitle">Versatile artistry for every occasion - from casual elegance to red carpet glamour</p>
+      <div class="gallery" data-gallery="misc">
+        <div class="auto-scroll">
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/misc/misc1.jpg" alt="Misc Look 1" onclick="openModal(event, this.src, 'misc')"/></div>
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/misc/misc2.jpg" alt="Misc Look 2" onclick="openModal(event, this.src, 'misc')"/></div>
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/misc/misc1.jpg" alt="Misc Look 3" onclick="openModal(event, this.src, 'misc')"/></div>
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/misc/misc2.jpg" alt="Misc Look 4" onclick="openModal(event, this.src, 'misc')"/></div>
+          <!-- Duplicates -->
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/misc/misc1.jpg" alt="Misc Look 1" onclick="openModal(event, this.src, 'misc')"/></div>
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/misc/misc2.jpg" alt="Misc Look 2" onclick="openModal(event, this.src, 'misc')"/></div>
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/misc/misc1.jpg" alt="Misc Look 3" onclick="openModal(event, this.src, 'misc')"/></div>
+          <div class="thumb"><img src="https://raw.githubusercontent.com/kishore1999-commits/makeup-artist-images/main/misc/misc2.jpg" alt="Misc Look 4" onclick="openModal(event, this.src, 'misc')"/></div>
+        </div>
+      </div>
+    </div>
+    <!-- Testimonials -->
+    <div class="testimonials fade-in-up">
+      <h2>💖 What Brides Say</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-text">"She made me feel like a princess on my wedding day! The makeup was absolutely flawless and lasted throughout all the ceremonies. Every detail was perfect!"</p>
+          <p class="testimonial-author">— Kavya R.</p>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">"Highly professional and incredibly creative! She understood exactly what I wanted and delivered beyond my wildest expectations. A true artist with a magical touch!"</p>
+          <p class="testimonial-author">— Sita M.</p>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">"The best makeup artist in Hyderabad! Her attention to detail and passion for her craft really shows in her work. I felt beautiful, confident and radiant!"</p>
+          <p class="testimonial-author">— Priya K.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Connect Form -->
+    <div class="connect-me fade-in-up" id="connect-me">
+      <h2>✨ Let's Create Magic Together</h2>
+      <p class="section-subtitle">Book your appointment and let's make your beauty dreams come true</p>
+      <form class="connect-form">
+        <input type="text" placeholder="Your Name *" required>
+        <input type="email" placeholder="Your Email *" required>
+        <input type="tel" placeholder="Your Phone Number *" required>
+        <textarea placeholder="Tell me about your event and makeup preferences *" required></textarea>
+        <button type="submit">💌 Send Inquiry</button>
+      </form>
+    </div>
+    <!-- Footer -->
+    <div class="footer">
+      <div class="footer-content">
+        <div class="footer-logo">Your Name 💄</div>
+        <p class="footer-text">Professional Makeup Artist | Telugu Bridal Specialist | Hyderabad</p>
+        <div class="footer-social">
+          <a href="mailto:yourname@example.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://youtube.com/@yourchannel" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://wa.me/919876543210" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Your Name. All Rights Reserved. | Designed with ❤️ & ✨ in Hyderabad</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let currentGallery = [];
+    let currentIndex = 0;
+
+    // Update counter display
+    function updateCounter() {
+      const counter = document.getElementById('imageCounter');
+      if (currentGallery.length > 1) {
+        counter.textContent = `${currentIndex + 1} / ${currentGallery.length}`;
+        counter.style.display = 'block';
+      } else {
+        counter.style.display = 'none';
+      }
+    }
+
+    // Profile modal
+    function openModalProfile() {
+      const modal = document.getElementById('lightboxModal');
+      const modalImg = document.getElementById('modalImage');
+      modal.style.display = 'block';
+      modalImg.src = document.getElementById('profileImg').src;
+      currentGallery = [modalImg.src];
+      currentIndex = 0;
+      document.body.style.overflow = 'hidden';
+      updateCounter();
+    }
+
+    // Gallery modal
+    function openModal(event, src, galleryType) {
+      event.stopPropagation();
+      const modal = document.getElementById('lightboxModal');
+      const modalImg = document.getElementById('modalImage');
+      modal.style.display = 'block';
+      modalImg.src = src;
+      
+      // Collect unique images from the gallery
+      const gallery = document.querySelector(`[data-gallery="${galleryType}"] .auto-scroll`);
+      currentGallery = Array.from(gallery.querySelectorAll('img'))
+        .map(img => img.src)
+        .filter((value, index, self) => self.indexOf(value) === index);
+      currentIndex = currentGallery.indexOf(src);
+      document.body.style.overflow = 'hidden';
+      updateCounter();
+    }
+
+    // Close modal
+    function closeModal() {
+      document.getElementById('lightboxModal').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close on X button click
+    document.querySelector('.close').onclick = closeModal;
+
+    // Click outside to close
+    window.onclick = function(event) {
+      const modal = document.getElementById('lightboxModal');
+      if (event.target === modal) {
+        closeModal();
+      }
+    }
+
+    // Keyboard support
+    document.addEventListener('keydown', function(event) {
+      const modal = document.getElementById('lightboxModal');
+      if (modal.style.display === 'block') {
+        if (event.key === 'Escape') {
+          closeModal();
+        } else if (event.key === 'ArrowLeft') {
+          changeImage(-1);
+        } else if (event.key === 'ArrowRight') {
+          changeImage(1);
+        }
+      }
+    });
+
+    // Navigation with smooth transitions
+    function changeImage(direction) {
+      const modalImg = document.getElementById('modalImage');
+      
+      // Fade out
+      modalImg.style.opacity = '0';
+      
+      setTimeout(() => {
+        currentIndex = (currentIndex + direction + currentGallery.length) % currentGallery.length;
+        modalImg.src = currentGallery[currentIndex];
+        updateCounter();
+        
+        // Fade in
+        modalImg.style.opacity = '1';
+      }, 200);
+    }
+
+    // Add smooth opacity transition to modal image
+    document.getElementById('modalImage').style.transition = 'opacity 0.3s ease';
+  </script>
+</body>
+</html>
